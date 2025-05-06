@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問題回報 - Invoque</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/compressorjs@1.1.1/dist/compressor.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://accounts.google.com/gsi/client"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Navigation from index.html -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2 group" style="text-decoration: none;">
+                    <img src="magic-wand.png" alt="Invoque Logo" class="w-8 h-8 group-hover:scale-105 transition-transform" />
+                    <span class="text-xl font-bold text-purple-600">Invoque</span>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html#features" class="text-gray-600 hover:text-purple-600 transition-colors">功能</a>
+                <a href="index.html#usage" class="text-gray-600 hover:text-purple-600 transition-colors">使用場景</a>
+                <a href="index.html#versions" class="text-gray-600 hover:text-purple-600 transition-colors">版本資訊</a>
+                <a href="index.html#privacy" class="text-gray-600 hover:text-purple-600 transition-colors">隱私與安全</a>
+            </div>
+            <div>
+                <button class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors">立即下載</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto">
+            <h1 class="text-3xl font-bold mb-8 text-center text-purple-400">問題回報</h1>
+            
+            <form id="reportForm" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">姓名或暱稱</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">電子郵件</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">問題描述</label>
+                    <textarea id="message" name="message" rows="4" required
+                        class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
+                </div>
+
+                <div>
+                    <label for="screenshot" class="block text-sm font-medium text-gray-300 mb-2">上傳截圖（最大 5MB）</label>
+                    <input type="file" id="screenshot" name="screenshot" accept="image/*"
+                        class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                    <p class="text-sm text-gray-400 mt-1">支援 JPG、PNG 格式，圖片將自動壓縮</p>
+                </div>
+
+                <div id="uploadProgress" class="hidden">
+                    <div class="w-full bg-gray-700 rounded-full h-2.5">
+                        <div class="bg-purple-600 h-2.5 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <p class="text-sm text-gray-400 mt-1">上傳中...</p>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                    送出回報
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- Footer from index.html -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8 text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z"></path>
+                        </svg>
+                        <span class="text-xl font-bold">Invoque</span>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">召喚想法，指揮創造力！讓您的 AI 提示詞管理更加高效。</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-purple-300">產品</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">下載</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">功能</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">更新日誌</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">路線圖</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-purple-300">支援</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">文檔</a></li>
+                            <li><a href="report.html" class="text-gray-400 hover:text-white transition-colors">問題回報</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">社群</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">聯絡我們</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-purple-300">法律</h3>
+                        <ul class="space-y-2">
+                            <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">隱私政策</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">使用條款</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">&copy; 2023 Invoque. 保留所有權利。</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.162 5.656a8.384 8.384 0 01-2.402.658A4.196 4.196 0 0021.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 00-7.126 3.814 11.874 11.874 0 01-8.62-4.37 4.168 4.168 0 00-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 01-1.894-.523v.052a4.185 4.185 0 003.355 4.101 4.21 4.21 0 01-1.89.072A4.185 4.185 0 007.97 16.65a8.394 8.394 0 01-6.191 1.732 11.83 11.83 0 006.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 002.087-2.165z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const FOLDER_ID = '1UuWxtJhPM5VSiSN6MjHAtYExjBShBPx_';
+        const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+
+        document.getElementById('reportForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const form = e.target;
+            const fileInput = document.getElementById('screenshot');
+            const progressBar = document.querySelector('#uploadProgress .bg-purple-600');
+            const progressContainer = document.getElementById('uploadProgress');
+            
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                
+                if (file.size > MAX_FILE_SIZE) {
+                    alert('檔案大小不能超過 5MB');
+                    return;
+                }
+
+                try {
+                    progressContainer.classList.remove('hidden');
+                    
+                    // 壓縮圖片
+                    const compressedFile = await new Promise((resolve) => {
+                        new Compressor(file, {
+                            quality: 0.8,
+                            success(result) {
+                                resolve(result);
+                            },
+                            error(err) {
+                                console.error(err);
+                                resolve(file);
+                            }
+                        });
+                    });
+
+                    // 上傳到 Google Drive
+                    const formData = new FormData();
+                    formData.append('file', compressedFile);
+                    formData.append('folderId', FOLDER_ID);
+                    
+                    const response = await fetch('/upload', {
+                        method: 'POST',
+                        body: formData,
+                        onUploadProgress: (progressEvent) => {
+                            const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                            progressBar.style.width = percentCompleted + '%';
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('上傳失敗');
+                    }
+
+                    // 送出表單資料
+                    const formData2 = new FormData(form);
+                    formData2.append('screenshotUrl', await response.text());
+                    
+                    const submitResponse = await fetch('/submit-report', {
+                        method: 'POST',
+                        body: formData2
+                    });
+
+                    if (!submitResponse.ok) {
+                        throw new Error('送出失敗');
+                    }
+
+                    alert('回報已送出，感謝您的回饋！');
+                    form.reset();
+                    
+                } catch (error) {
+                    console.error(error);
+                    alert('發生錯誤，請稍後再試');
+                } finally {
+                    progressContainer.classList.add('hidden');
+                    progressBar.style.width = '0%';
+                }
+            } else {
+                // 沒有上傳圖片，直接送出表單
+                const formData = new FormData(form);
+                try {
+                    const response = await fetch('/submit-report', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('送出失敗');
+                    }
+
+                    alert('回報已送出，感謝您的回饋！');
+                    form.reset();
+                    
+                } catch (error) {
+                    console.error(error);
+                    alert('發生錯誤，請稍後再試');
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
