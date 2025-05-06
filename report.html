@@ -139,105 +139,80 @@
     </footer>
 
     <script>
-        const FOLDER_ID = '1UuWxtJhPM5VSiSN6MjHAtYExjBShBPx_';
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbwfby60DkKhCw6OXvK2_JHhJAi2M0hQCJVvL3n0XCt8oM1Zb6HyA334YqO_dAgKSXPaaw/exec';
         const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
         document.getElementById('reportForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            
             const form = e.target;
             const fileInput = document.getElementById('screenshot');
             const progressBar = document.querySelector('#uploadProgress .bg-purple-600');
             const progressContainer = document.getElementById('uploadProgress');
-            
+
+            const formData = new FormData(form);
+            let base64 = '';
+            let file = null;
             if (fileInput.files.length > 0) {
-                const file = fileInput.files[0];
-                
+                file = fileInput.files[0];
                 if (file.size > MAX_FILE_SIZE) {
                     alert('檔案大小不能超過 5MB');
                     return;
                 }
-
-                try {
-                    progressContainer.classList.remove('hidden');
-                    
-                    // 壓縮圖片
-                    const compressedFile = await new Promise((resolve) => {
+                // 壓縮圖片（如有 Compressor.js）
+                if (window.Compressor) {
+                    file = await new Promise((resolve) => {
                         new Compressor(file, {
                             quality: 0.8,
-                            success(result) {
-                                resolve(result);
-                            },
-                            error(err) {
-                                console.error(err);
-                                resolve(file);
-                            }
+                            success(result) { resolve(result); },
+                            error() { resolve(file); }
                         });
                     });
+                }
+                base64 = await toBase64(file);
+            }
 
-                    // 上傳到 Google Drive
-                    const formData = new FormData();
-                    formData.append('file', compressedFile);
-                    formData.append('folderId', FOLDER_ID);
-                    
-                    const response = await fetch('/upload', {
-                        method: 'POST',
-                        body: formData,
-                        onUploadProgress: (progressEvent) => {
-                            const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-                            progressBar.style.width = percentCompleted + '%';
-                        }
-                    });
+            const params = new URLSearchParams();
+            params.append('name', formData.get('name'));
+            params.append('email', formData.get('email'));
+            params.append('message', formData.get('message'));
+            params.append('screenshot', base64.replace(/^data:.+;base64,/, ''));
+            params.append('screenshotName', file ? file.name : '');
+            params.append('screenshotType', file ? file.type : '');
 
-                    if (!response.ok) {
-                        throw new Error('上傳失敗');
-                    }
-
-                    // 送出表單資料
-                    const formData2 = new FormData(form);
-                    formData2.append('screenshotUrl', await response.text());
-                    
-                    const submitResponse = await fetch('/submit-report', {
-                        method: 'POST',
-                        body: formData2
-                    });
-
-                    if (!submitResponse.ok) {
-                        throw new Error('送出失敗');
-                    }
-
+            try {
+                progressContainer.classList.remove('hidden');
+                progressBar.style.width = '30%';
+                const response = await fetch(GAS_URL, {
+                    method: 'POST',
+                    body: params
+                });
+                progressBar.style.width = '80%';
+                const result = await response.json();
+                progressBar.style.width = '100%';
+                if (result.result === 'success') {
                     alert('回報已送出，感謝您的回饋！');
                     form.reset();
-                    
-                } catch (error) {
-                    console.error(error);
-                    alert('發生錯誤，請稍後再試');
-                } finally {
+                } else {
+                    alert('上傳失敗：' + result.message);
+                }
+            } catch (error) {
+                alert('發生錯誤，請稍後再試');
+            } finally {
+                setTimeout(() => {
                     progressContainer.classList.add('hidden');
                     progressBar.style.width = '0%';
-                }
-            } else {
-                // 沒有上傳圖片，直接送出表單
-                const formData = new FormData(form);
-                try {
-                    const response = await fetch('/submit-report', {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    if (!response.ok) {
-                        throw new Error('送出失敗');
-                    }
-
-                    alert('回報已送出，感謝您的回饋！');
-                    form.reset();
-                    
-                } catch (error) {
-                    console.error(error);
-                    alert('發生錯誤，請稍後再試');
-                }
+                }, 800);
             }
         });
+
+        function toBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
     </script>
 </body>
 </html> 
