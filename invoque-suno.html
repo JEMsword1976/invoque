@@ -3,30 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隱私權政策 - Invoque</title>
+    <title>Invoque Suno 版本介紹</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        purple: {
-                            light: '#d8b4fe',
-                            DEFAULT: '#9333ea',
-                            dark: '#6b21a8',
-                        },
-                    },
-                    fontFamily: {
-                        sans: ['Noto Sans TC', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
-    <!-- Navigation -->
+    <!-- 頁首 -->
     <nav class="bg-white shadow-md">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
@@ -37,7 +19,7 @@
             </div>
             <div class="hidden md:flex space-x-8 items-center">
                 <div class="relative group">
-                    <a href="index.html#features" class="text-gray-600 hover:text-purple-600 transition-colors">版本功能</a>
+                    <a href="#" class="text-gray-600 hover:text-purple-600 transition-colors">版本功能</a>
                     <div class="absolute left-0 mt-0 w-40 bg-white rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:opacity-100 hover:pointer-events-auto transition-opacity z-50">
                         <a href="invoque-free.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-t-lg">Invoque Free</a>
                         <a href="invoque-suno.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-b-lg">Invoque Suno</a>
@@ -53,28 +35,55 @@
         </div>
     </nav>
 
-    <!-- Content -->
-    <div class="container mx-auto px-4 py-8">
-        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
-            <h1 class="text-3xl font-bold text-purple-800 mb-6">隱私權政策</h1>
-            <div class="space-y-4 text-gray-700">
-                <p>本擴充功能重視使用者的隱私權。</p>
-                <p>我們不會收集、儲存或傳送任何個人資料。所有資料（例如提示語或設定）僅儲存在使用者本機瀏覽器中，不會上傳至任何伺服器。</p>
-                <p>本擴充功能也不會追蹤使用者的瀏覽紀錄、不會存取個人帳號資訊，亦不會與任何第三方分享任何資料。</p>
-                <p>使用者可隨時透過 Chrome 擴充功能管理介面移除資料或解除安裝本擴充功能。</p>
-            </div>
-
-            <h2 class="text-2xl font-bold text-purple-800 mt-8 mb-4">Privacy Policy</h2>
-            <div class="space-y-4 text-gray-700">
-                <p>This extension respects your privacy.</p>
-                <p>We do not collect, store, or transmit any personal information. All data (such as prompts or settings) is stored locally in your browser and never sent to any server.</p>
-                <p>The extension does not track your browsing history, access your account information, or share data with any third party.</p>
-                <p>You can remove all data at any time by uninstalling the extension.</p>
-            </div>
+    <main class="max-w-2xl mx-auto py-10 px-4">
+        <div class="flex justify-center mt-8">
+            <img src="InvoqueSuno.png" alt="Invoque Suno 示意圖" class="w-48 h-auto mb-4" />
         </div>
-    </div>
+        <h1 class="text-4xl font-bold text-center mt-2 mb-2" style="color: #222;">Invoque SUNO</h1>
+        <div class="text-center text-gray-500 text-lg mb-6">🎵 Suno 創作者的效率神器！完整提示詞管理 + 一鍵貼入功能</div>
+        <section class="mb-8">
+            <p class="mb-4">這款擴充功能專為經常使用提示詞的創作者設計，提供全面且高效的提示詞管理系統，讓你從儲存、編輯到分類與搜尋，一手掌握所有靈感。不只如此，它還與 Suno 網站深度整合，大幅簡化你的創作流程！</p>
+        </section>
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-purple-600 mb-4">🚀 主要功能特色</h2>
+            <ul class="space-y-4">
+                <li><b>✅ 提示詞管理系統</b><br>
+                    儲存、編輯、刪除提示詞（包含標題與內容）<br>
+                    支援分類功能：可新增、編輯、刪除分類<br>
+                    <span class="text-purple-500">特殊分類「suno styles」會自動套用至 Suno 的樣式欄位</span>
+                </li>
+                <li><b>✅ 強大搜尋與分類篩選</b><br>
+                    即時搜尋提示詞<br>
+                    依分類快速篩選所需內容
+                </li>
+                <li><b>✅ 資料匯入與備份</b><br>
+                    支援 JSON 匯出/匯入<br>
+                    可從剪貼簿貼上或複製提示詞內容
+                </li>
+                <li><b>✅ Suno 網站整合</b><br>
+                    一鍵貼入歌詞與風格<br>
+                    自動複製並插入至 Suno 的指定欄位<br>
+                    成功後顯示提示訊息
+                </li>
+                <li><b>✅ 多語言介面支援</b><br>
+                    內建 9 種語言：繁中、簡中、英文、日文、韓文、法文、德文、西班牙文、葡萄牙文<br>
+                    根據瀏覽器自動選擇語言，所有操作訊息完整在地化
+                </li>
+                <li><b>✅ 現代化使用者介面</b><br>
+                    使用 Material Icons 設計，支援彈出式視窗與響應式設計
+                </li>
+                <li><b>✅ 安全與權限控管</b><br>
+                    僅使用必要的 Chrome 權限<br>
+                    支援剪貼簿與儲存空間操作，可在所有網站運作
+                </li>
+            </ul>
+        </section>
+        <section class="mb-8">
+            <div class="text-center text-purple-700 font-bold text-lg mt-8">不再手動輸入、不再反覆複製貼上。<br>讓你在 Suno 的每次創作都更輕鬆、更高效。<br>立即安裝，開始更聰明的創作流程！</div>
+        </section>
+    </main>
 
-    <!-- Footer -->
+    <!-- 頁尾 -->
     <footer class="bg-gray-800 text-white py-12 mt-12">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between">
@@ -136,4 +145,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html> 

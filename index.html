@@ -47,8 +47,14 @@
                 </svg>
                 <span class="text-xl font-bold text-purple-600">Invoque</span>
             </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#features" class="text-gray-600 hover:text-purple-600 transition-colors">功能</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <div class="relative group">
+                    <a href="#features" class="text-gray-600 hover:text-purple-600 transition-colors">版本功能</a>
+                    <div class="absolute left-0 mt-0 w-40 bg-white rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:opacity-100 hover:pointer-events-auto transition-opacity z-50">
+                        <a href="invoque-free.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-t-lg">Invoque Free</a>
+                        <a href="invoque-suno.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-b-lg">Invoque Suno</a>
+                    </div>
+                </div>
                 <a href="#usage" class="text-gray-600 hover:text-purple-600 transition-colors">使用場景</a>
                 <a href="#versions" class="text-gray-600 hover:text-purple-600 transition-colors">版本資訊</a>
                 <a href="#privacy" class="text-gray-600 hover:text-purple-600 transition-colors">隱私與安全</a>
@@ -60,7 +66,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-pattern py-20 md:py-32">
+    <section class="hero-pattern py-10 md:py-16">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
@@ -81,20 +87,54 @@
                         </button>
                     </div>
                 </div>
-                <div class="md:w-1/2">
-                    <div class="bg-white p-4 rounded-lg shadow-xl">
-                        <svg class="w-full h-64 text-purple-600" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="50" y="50" width="300" height="200" rx="10" fill="#f3e8ff" />
-                            <rect x="70" y="80" width="100" height="20" rx="4" fill="#d8b4fe" />
-                            <rect x="70" y="110" width="260" height="30" rx="4" fill="#9333ea" />
-                            <rect x="70" y="150" width="80" height="20" rx="4" fill="#d8b4fe" />
-                            <rect x="160" y="150" width="80" height="20" rx="4" fill="#d8b4fe" />
-                            <rect x="250" y="150" width="80" height="20" rx="4" fill="#d8b4fe" />
-                            <rect x="70" y="180" width="260" height="40" rx="4" fill="#f3e8ff" stroke="#9333ea" stroke-width="2" />
-                            <circle cx="330" cy="70" r="10" fill="#9333ea" />
-                            <path d="M330 65V75M325 70H335" stroke="white" stroke-width="2" />
-                        </svg>
+                <div class="md:w-1/2 flex items-center justify-center">
+                    <div class="bg-white p-2 rounded-lg shadow-xl flex justify-center items-center" style="min-height:140px;">
+                        <div id="carousel" class="relative" style="width:260px;">
+                            <img id="carousel-img" src="InvoqueFree.png" alt="Invoque Free" class="w-full rounded-xl shadow-md opacity-100 transition-opacity duration-700">
+                            <div id="carousel-dots" class="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2"></div>
+                        </div>
                     </div>
+                    <script>
+                    const images = [
+                        {src: 'InvoqueFree.png', alt: 'Invoque Free'},
+                        {src: 'InvoqueSuno.png', alt: 'Invoque for Suno'}
+                    ];
+                    let idx = 0;
+                    const img = document.getElementById('carousel-img');
+                    const dots = document.getElementById('carousel-dots');
+
+                    function renderDots() {
+                        dots.innerHTML = '';
+                        images.forEach((_, i) => {
+                            const dot = document.createElement('span');
+                            dot.className = 'inline-block w-3 h-3 rounded-full ' + (i === idx ? 'bg-purple-500' : 'bg-gray-300') + ' cursor-pointer transition-colors';
+                            dot.onclick = () => switchTo(i);
+                            dots.appendChild(dot);
+                        });
+                    }
+
+                    function switchTo(newIdx) {
+                        if (newIdx === idx) return;
+                        img.classList.remove('opacity-100');
+                        img.classList.add('opacity-0');
+                        setTimeout(() => {
+                            idx = newIdx;
+                            img.src = images[idx].src;
+                            img.alt = images[idx].alt;
+                            renderDots();
+                            img.classList.remove('opacity-0');
+                            img.classList.add('opacity-100');
+                        }, 400);
+                    }
+
+                    function next() {
+                        let newIdx = (idx + 1) % images.length;
+                        switchTo(newIdx);
+                    }
+
+                    renderDots();
+                    setInterval(next, 2500);
+                    </script>
                 </div>
             </div>
         </div>
@@ -458,7 +498,7 @@
                     </a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.162 5.656a8.384 8.384 0 01-2.402.658A4.196 4.196 0 0021.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 00-7.126 3.814 11.874 11.874 0 01-8.62-4.37 4.168 4.168 0 00-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 01-1.894-.523v.052a4.185 4.185 0 003.355 4.101 4.21 4.21 0 01-1.89.072A4.185 4.185 0 007.97 16.65a8.394 8.394 0 01-6.191 1.732 11.83 11.83 0 006.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 002.087-2.165z"></path>
+                            <path d="M22.162 5.656a8.384 8.384 0 01-2.402.658A4.196 4.196 0 0021.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 00-7.126 3.814c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"></path>
                         </svg>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">
@@ -488,5 +528,5 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'938e8d3840e6f20d',t:'MTc0NjA5NDg4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
