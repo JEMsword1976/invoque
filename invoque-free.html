@@ -9,7 +9,7 @@
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
     <!-- 頁首 -->
-    <nav class="bg-white shadow-md">
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <a href="index.html" class="flex items-center space-x-2 group" style="text-decoration: none;">
@@ -22,25 +22,90 @@
                     <a href="#" class="text-gray-600 hover:text-purple-600 transition-colors">版本功能</a>
                     <div class="absolute left-0 mt-0 w-40 bg-white rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:opacity-100 hover:pointer-events-auto transition-opacity z-50">
                         <a href="invoque-free.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-t-lg">Invoque Free</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-b-lg">Invoque Suno</a>
+                        <a href="invoque-suno.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-b-lg">Invoque Suno</a>
                     </div>
                 </div>
                 <a href="index.html#usage" class="text-gray-600 hover:text-purple-600 transition-colors">使用場景</a>
                 <a href="index.html#versions" class="text-gray-600 hover:text-purple-600 transition-colors">版本資訊</a>
                 <a href="index.html#privacy" class="text-gray-600 hover:text-purple-600 transition-colors">隱私與安全</a>
+                <a href="report.html" class="text-gray-600 hover:text-purple-600 transition-colors" aria-label="聯絡我們">聯絡我們</a>
             </div>
             <div>
-                <button class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors">立即下載</button>
+                <a href="https://chromewebstore.google.com/detail/invoque-free/njfcikdafgjafbcgefkbnnkfbogbmfjo" target="_blank" class="inline-flex items-center bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-colors shadow-lg hover:shadow-xl">
+                    <i class="fas fa-download mr-2"></i>
+                    立即下載
+                </a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-2xl mx-auto py-10 px-4">
-        <div class="flex justify-center mb-4">
-            <img src="InvoqueFree.png" alt="Invoque Free 示意圖" class="w-48 h-auto" />
+    <main class="max-w-4xl mx-auto py-10 px-4 pt-24">
+        <h1 class="text-4xl font-bold text-purple-700 mb-4 text-center">Invoque FREE - AI 提示詞管理工具</h1>
+        <p class="text-gray-600 mb-8 text-center text-lg">召喚想法，指揮創造力！</p>
+
+        <!-- 新增：功能展示區塊 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <img src="feature-1.png" alt="提示詞管理功能" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <h3 class="text-xl font-semibold text-purple-600 mb-2">智能提示詞管理</h3>
+                <p class="text-gray-600">輕鬆建立、編輯和組織您的 AI 提示詞，支援分類管理和快速搜尋。</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <img src="feature-2.png" alt="快速搜尋功能" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <h3 class="text-xl font-semibold text-purple-600 mb-2">即時搜尋體驗</h3>
+                <p class="text-gray-600">強大的搜尋功能，讓您快速找到需要的提示詞，提升工作效率。</p>
+            </div>
         </div>
-        <h1 class="text-3xl font-bold text-purple-700 mb-2">Invoque FREE - AI 提示詞管理工具</h1>
-        <p class="text-gray-600 mb-6">召喚想法，指揮創造力！</p>
+
+        <!-- 新增：使用流程說明 -->
+        <section class="mb-12 bg-purple-50 p-8 rounded-lg">
+            <h2 class="text-2xl font-semibold text-purple-600 mb-6 text-center">簡單三步驟，開始使用</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">1</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">安裝擴充功能</h3>
+                    <p class="text-gray-600">從瀏覽器商店下載並安裝 Invoque Free</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">2</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">建立提示詞</h3>
+                    <p class="text-gray-600">開始建立您的第一個 AI 提示詞</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">3</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">開始使用</h3>
+                    <p class="text-gray-600">在任何 AI 平台上使用您的提示詞</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新增：實際應用案例 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-purple-600 mb-6 text-center">實際應用案例</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-pen-fancy text-2xl text-purple-500 mr-3"></i>
+                        <h3 class="text-xl font-semibold">內容創作者</h3>
+                    </div>
+                    <p class="text-gray-600">快速存取常用的寫作提示詞，提升創作效率</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-code text-2xl text-purple-500 mr-3"></i>
+                        <h3 class="text-xl font-semibold">開發人員</h3>
+                    </div>
+                    <p class="text-gray-600">管理程式碼生成和除錯相關的提示詞</p>
+                </div>
+            </div>
+        </section>
+
         <section class="mb-8">
             <h2 class="text-xl font-semibold text-purple-600 mb-2">命名由來｜Invoque</h2>
             <p class="mb-2">Invoque 源自英文單字 Invoke，意指「喚起」、「召喚」——正如開發者在使用 AI 時，輸入一組 Prompt，就能立即召喚出強大的智慧回應與創造力。</p>
@@ -88,6 +153,13 @@
             </ul>
         </section>
         <div class="text-center text-purple-700 font-bold text-lg mt-8">召喚想法，指揮創造力！</div>
+        <div class="text-center mt-12">
+            <a href="https://chromewebstore.google.com/detail/invoque-free/njfcikdafgjafbcgefkbnnkfbogbmfjo" target="_blank" class="inline-flex items-center bg-purple-600 text-white px-8 py-4 rounded-lg hover:bg-purple-700 transition-colors shadow-lg hover:shadow-xl text-lg font-semibold">
+                <i class="fas fa-download mr-3 text-xl"></i>
+                立即在 Chrome Web Store 下載
+            </a>
+            <p class="text-gray-500 mt-4">支援所有支援 Manifest V3 的瀏覽器</p>
+        </div>
     </main>
 
     <!-- 頁尾 -->
@@ -115,7 +187,7 @@
                         <h3 class="text-lg font-semibold mb-4 text-purple-300">支援</h3>
                         <ul class="space-y-2">
                             <li><a href="#" class="text-gray-400 hover:text-white transition-colors">文檔</a></li>
-                            <li><a href="report.html" class="text-gray-400 hover:text-white transition-colors">問題回報</a></li>
+                            <li><a href="report.html" class="text-gray-400 hover:text-white transition-colors">聯絡我們</a></li>
                             <li><a href="#" class="text-gray-400 hover:text-white transition-colors">社群</a></li>
                             <li><a href="#" class="text-gray-400 hover:text-white transition-colors">聯絡我們</a></li>
                         </ul>
