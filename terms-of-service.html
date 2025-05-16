@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服務條款與政策 - Invoque</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <div id="header"></div>
+    <script>fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('header').innerHTML=t});</script>
+
+    <main class="max-w-4xl mx-auto py-10 px-4">
+        <h1 class="text-4xl font-bold text-purple-700 mb-4 text-center">
+            <i class="fas fa-file-contract mr-3"></i>服務條款與政策
+        </h1>
+        <p class="text-gray-600 mb-8 text-center">最後更新：2025年5月13日</p>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-check-circle mr-2"></i>1. 使用條款
+                    </h2>
+                    <p class="text-gray-700">您使用 Invoque Studio 提供的任何產品或服務（以下簡稱「本服務」）即表示您同意受本條款約束。</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-key mr-2"></i>2. 授權與訂閱
+                    </h2>
+                    <p class="text-gray-700">部分產品需要有效授權碼或訂閱才能完整使用。若未於帳單週期結束前取消訂閱，系統將自動續訂。未經授權的授權碼使用是被嚴格禁止的。</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-credit-card mr-2"></i>3. 付款與退款政策
+                    </h2>
+                    <p class="text-gray-700 mb-4">所有付款皆透過第三方平台處理。若您於購買後 7 天內提出退款申請，且尚未大量使用產品功能，則我們將酌情提供退款。</p>
+                    <p class="text-gray-700">退款請透過我們的聯絡頁提交申請。</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-shield-alt mr-2"></i>4. 隱私權政策
+                    </h2>
+                    <p class="text-gray-700 mb-4">我們重視您的隱私。所有使用者資料僅用於驗證授權與改善服務體驗。我們不會出售或分享您的個人資訊給第三方，除非法律要求。</p>
+                    <p class="text-gray-700 mb-4">我們可能會收集的資訊包括：Email、購買資訊、授權狀態與使用時間戳。</p>
+                    <p class="text-gray-700">您可隨時聯絡我們請求刪除您的資料。</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-copyright mr-2"></i>5. 智慧財產權
+                    </h2>
+                    <p class="text-gray-700">本服務中所有內容、原始碼與商標皆為 Invoque Studio 所有，並受相關智慧財產權法保護。</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-edit mr-2"></i>6. 服務修改
+                    </h2>
+                    <p class="text-gray-700">我們保留隨時修改或中止本服務之權利，恕不另行通知。條款變更將於本頁面更新後立即生效。</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>7. 責任限制
+                    </h2>
+                    <p class="text-gray-700">在法律允許的最大範圍內，對因使用或無法使用本服務所產生的任何間接損害，我們概不負責。</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-envelope mr-2"></i>8. 聯絡我們
+                    </h2>
+                    <p class="text-gray-700 mb-4">若您對本條款、隱私政策或退款政策有任何疑問，請透過下列網頁與我們聯繫：</p>
+                    <a href="https://invoque-v9g7.vercel.app/report.html" class="text-purple-800 hover:text-purple-700">
+                        <i class="fas fa-external-link-alt mr-1"></i>👉 https://invoque-v9g7.vercel.app/report.html
+                    </a>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script>fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer').innerHTML=t});</script>
+</body>
+</html> 
