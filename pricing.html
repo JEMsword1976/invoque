@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5QDHPFEWL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-V5QDHPFEWL');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoque 價格方案</title>
+    <meta name="description" content="Invoque 提供免費版與 SUNO 專業版，滿足不同使用者的需求。">
+    <meta property="og:title" content="Invoque 價格方案">
+    <meta property="og:description" content="Invoque 提供免費版與 SUNO 專業版，滿足不同使用者的需求。">
+    <meta property="og:image" content="InvoqueLogo.png">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <div id="header"></div>
+    <script>fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('header').innerHTML=t});</script>
+
+    <main class="max-w-6xl mx-auto py-10 px-4 pt-20">
+        <h1 class="text-4xl font-bold text-purple-700 mb-4 text-center">選擇最適合您的方案</h1>
+        <p class="text-gray-600 mb-12 text-center text-lg">兩個獨立產品，滿足不同使用需求</p>
+
+        <!-- 價格方案卡片 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- FREE 版本 -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Invoque FREE</h2>
+                    <p class="text-gray-600">AI 提示詞管理工具</p>
+                </div>
+                <div class="text-center mb-8">
+                    <span class="text-4xl font-bold text-gray-800">免費</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>通用 AI 提示詞管理</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>支援所有 AI 網站</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>基本分類管理</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>基本搜尋功能</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>多語言介面支援</span>
+                    </li>
+                </ul>
+                <a href="#" class="block text-center bg-gray-100 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                    立即使用
+                </a>
+            </div>
+
+            <!-- SUNO 版本 -->
+            <div class="bg-purple-50 rounded-2xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 border-2 border-purple-200">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-purple-700 mb-2">Invoque SUNO</h2>
+                    <p class="text-purple-600">音樂創作專用工具</p>
+                </div>
+                <div class="text-center mb-8">
+                    <span class="text-4xl font-bold text-purple-700">$3</span>
+                    <span class="text-gray-600">/ 月</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>專為 Suno 優化的介面</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>一鍵貼入 Suno 功能</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>歌詞與風格分欄管理</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>進階搜尋與篩選</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>資料匯入匯出</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>優先技術支援</span>
+                    </li>
+                </ul>
+                <a href="#" class="block text-center bg-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                    立即訂閱
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ 區塊 -->
+        <section class="mt-20 max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">常見問題</h2>
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg mb-2">Invoque FREE 和 Invoque SUNO 有什麼不同？</h3>
+                    <p class="text-gray-600">Invoque FREE 是通用的 AI 提示詞管理工具，適用於所有 AI 網站。而 Invoque SUNO 則是專門為音樂創作設計的工具，提供 Suno 專屬的歌詞和風格管理功能。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg mb-2">如何安裝 Invoque SUNO？</h3>
+                    <p class="text-gray-600">您可以直接在 Chrome Web Store 中安裝 Invoque SUNO。這是一個獨立的擴充功能，與 Invoque FREE 完全分開。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg mb-2">可以同時使用兩個版本嗎？</h3>
+                    <p class="text-gray-600">是的，您可以同時安裝 Invoque FREE 和 Invoque SUNO，它們是兩個獨立的產品，可以同時使用。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg mb-2">可以隨時取消訂閱嗎？</h3>
+                    <p class="text-gray-600">是的，您可以隨時在 Chrome Web Store 中取消 Invoque SUNO 的訂閱，取消後將在當前訂閱期結束後停止服務。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 聯絡支援 -->
+        <div class="text-center mt-16">
+            <p class="text-gray-600 mb-4">還有其他問題？</p>
+            <a href="mailto:support@invoque.com" class="inline-flex items-center text-purple-600 hover:text-purple-700">
+                <i class="fas fa-envelope mr-2"></i>
+                聯絡我們
+            </a>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script>fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer').innerHTML=t});</script>
+</body>
+</html> 
