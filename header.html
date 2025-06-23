@@ -6,25 +6,97 @@
                 <img src="InvoqueLogo.png" alt="Invoque Logo" style="height: 48px;" />
             </a>
         </div>
-        <div class="hidden md:flex space-x-8 items-center">
-            <a href="about.html" class="text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-1"><i class="fas fa-building"></i>關於我們</a>
+        <div class="hidden md:flex space-x-8 items-center" id="header-menu">
+            <a href="about.html" class="text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-1 menu-about"><i class="fas fa-building"></i><span>關於我們</span></a>
             <div class="relative group">
-                <a href="#" class="text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-1"><i class="fas fa-box-open"></i>產品介紹</a>
+                <a href="#" class="text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-1 menu-products"><i class="fas fa-box-open"></i><span>產品介紹</span></a>
                 <div class="absolute left-0 mt-0 w-40 bg-white rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:opacity-100 hover:pointer-events-auto transition-opacity z-50">
-                    <a href="invoque-free.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-t-lg">Invoque Free</a>
-                    <a href="invoque-suno.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">Invoque Suno</a>
-                    <a href="netflix-skipper.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">Netflix Skipper</a>
-                    <a href="pricing.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-b-lg">價格方案</a>
+                    <a href="invoque-free.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-t-lg menu-invoque-free">Invoque Free</a>
+                    <a href="invoque-suno.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 menu-invoque-suno">Invoque Suno</a>
+                    <a href="netflix-skipper.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 menu-netflix">Netflix Skipper</a>
+                    <a href="pricing.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-b-lg menu-pricing">價格方案</a>
                 </div>
             </div>
-            <a href="support.html" class="text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-1"><i class="fas fa-headset"></i>技術支援</a>
-            <a href="report.html" class="text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-1"><i class="fas fa-envelope"></i>聯絡我們</a>
+            <a href="support.html" class="text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-1 menu-support"><i class="fas fa-headset"></i><span>技術支援</span></a>
+            <a href="report.html" class="text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-1 menu-contact"><i class="fas fa-envelope"></i><span>聯絡我們</span></a>
         </div>
-        <div>
-            <a href="#" class="inline-flex items-center bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-colors shadow-lg hover:shadow-xl">
-                <i class="fas fa-download mr-2"></i>
-                立即下載
-            </a>
+        <div class="flex items-center space-x-2">
+            <button id="lang-switch" class="text-gray-600 hover:text-purple-600 border border-gray-300 rounded px-3 py-1 mr-2">EN</button>
         </div>
     </div>
-</nav> 
+</nav>
+<script>
+// 語言切換功能（自動判斷目前頁面，正確切換中/英文）
+(function() {
+    function getNewLangUrl(isToEn) {
+        var path = window.location.pathname;
+        var file = path.substring(path.lastIndexOf('/') + 1);
+        var dir = path.substring(0, path.lastIndexOf('/') + 1);
+        var search = window.location.search || '';
+        var hash = window.location.hash || '';
+        if (isToEn) {
+            if (file.endsWith('.html') && !file.endsWith('-en.html')) {
+                return dir + file.replace('.html', '-en.html') + search + hash;
+            }
+        } else {
+            if (file.endsWith('-en.html')) {
+                return dir + file.replace('-en.html', '.html') + search + hash;
+            }
+        }
+        return window.location.href;
+    }
+    var btn = document.getElementById('lang-switch');
+    var isEn = window.location.pathname.endsWith('-en.html');
+    btn.textContent = isEn ? '中文' : 'EN';
+    btn.onclick = function() {
+        window.location.href = getNewLangUrl(!isEn);
+    };
+
+    // header 連結自動切換語言
+    var pages = [
+        "index", "about", "invoque-free", "invoque-suno", "netflix-skipper",
+        "pricing", "support", "report", "terms-of-service", "privacy"
+    ];
+    document.querySelectorAll('a[href]').forEach(function(a) {
+        var href = a.getAttribute('href');
+        if (!href) return;
+        var match = href.match(/^([\w-]+)\.html$/);
+        if (match && pages.includes(match[1])) {
+            if (isEn && !href.endsWith('-en.html')) {
+                a.setAttribute('href', href.replace('.html', '-en.html'));
+            } else if (!isEn && href.endsWith('-en.html')) {
+                a.setAttribute('href', href.replace('-en.html', '.html'));
+            }
+        }
+    });
+
+    // header 選單自動切換語言
+    var menuText = isEn ? {
+        about: 'About',
+        products: 'Products',
+        invoqueFree: 'Invoque Free',
+        invoqueSuno: 'Invoque Suno',
+        netflix: 'Netflix Skipper',
+        pricing: 'Pricing',
+        support: 'Support',
+        contact: 'Contact'
+    } : {
+        about: '關於我們',
+        products: '產品介紹',
+        invoqueFree: 'Invoque Free',
+        invoqueSuno: 'Invoque Suno',
+        netflix: 'Netflix Skipper',
+        pricing: '價格方案',
+        support: '技術支援',
+        contact: '聯絡我們'
+    };
+    document.querySelector('.menu-about span').textContent = menuText.about;
+    document.querySelector('.menu-products span').textContent = menuText.products;
+    document.querySelector('.menu-invoque-free').textContent = menuText.invoqueFree;
+    document.querySelector('.menu-invoque-suno').textContent = menuText.invoqueSuno;
+    document.querySelector('.menu-netflix').textContent = menuText.netflix;
+    document.querySelector('.menu-pricing').textContent = menuText.pricing;
+    document.querySelector('.menu-support span').textContent = menuText.support;
+    document.querySelector('.menu-contact span').textContent = menuText.contact;
+})();
+</script> 

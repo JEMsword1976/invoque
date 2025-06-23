@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5QDHPFEWL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V5QDHPFEWL');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoque Suno - Product Introduction</title>
+    <meta name="description" content="Invoque Suno - The ultimate Suno AI prompt manager. Manage lyrics, styles, and insert with one click to boost your music creation.">
+    <meta property="og:title" content="Invoque Suno - Product Introduction">
+    <meta property="og:description" content="Invoque Suno - The ultimate Suno AI prompt manager. Manage lyrics, styles, and insert with one click to boost your music creation.">
+    <meta property="og:image" content="InvoqueLogo.png">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <div id="header"></div>
+    <script>
+    fetch('header.html').then(r=>r.text()).then(t=>{
+        document.getElementById('header').innerHTML = t;
+        // 重新執行 header 內的 script
+        var scripts = document.getElementById('header').querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+            var newScript = document.createElement('script');
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
+    });
+    </script>
+
+    <main class="max-w-4xl mx-auto py-10 px-4 pt-20">
+        <h1 class="text-4xl font-bold text-purple-700 mb-4 text-center">Invoque SUNO - The Ultimate Suno AI Prompt Manager</h1>
+        <div class="max-w-3xl mx-auto my-8 bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
+            <!-- Carousel Section -->
+            <div class="relative flex items-center w-full mb-4" style="min-height:180px;">
+                <button class="carousel-arrow left" id="suno-prev-btn" style="position: absolute; left: -48px; top: 50%; transform: translateY(-50%); z-index:2; background:rgba(107,70,193,0.8); color:white; width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:none; font-size:1.5rem;">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-container w-full" style="overflow: hidden;">
+                    <div id="suno-carousel-slide" class="flex transition-transform duration-500 w-full flex-col items-center">
+                        <img src="SUNO01.png" alt="Suno Slide 1" class="w-full rounded-xl suno-slide-img" style="display:block; max-height:480px; object-fit:contain;" />
+                        <div class="suno-caption" style="display:block; text-align:center; margin-top:12px; color:#6B46C1; font-weight:500; font-size:1.1rem;">Home: Quickly switch categories and create prompts</div>
+                        <img src="SUNO02.png" alt="Suno Slide 2" class="w-full rounded-xl suno-slide-img" style="display:none; max-height:480px; object-fit:contain;" />
+                        <div class="suno-caption" style="display:none; text-align:center; margin-top:12px; color:#6B46C1; font-weight:500; font-size:1.1rem;">Manage lyrics and styles separately, insert to Invoque with one click</div>
+                        <img src="SUNO03.png" alt="Suno Slide 3" class="w-full rounded-xl suno-slide-img" style="display:none; max-height:480px; object-fit:contain;" />
+                        <div class="suno-caption" style="display:none; text-align:center; margin-top:12px; color:#6B46C1; font-weight:500; font-size:1.1rem;">Prompt category management for quick access</div>
+                        <img src="SUNO04.png" alt="Suno Slide 4" class="w-full rounded-xl suno-slide-img" style="display:none; max-height:480px; object-fit:contain;" />
+                        <div class="suno-caption" style="display:none; text-align:center; margin-top:12px; color:#6B46C1; font-weight:500; font-size:1.1rem;">Instant search bar with result count</div>
+                        <img src="SUNO05.png" alt="Suno Slide 5" class="w-full rounded-xl suno-slide-img" style="display:none; max-height:480px; object-fit:contain;" />
+                        <div class="suno-caption" style="display:none; text-align:center; margin-top:12px; color:#6B46C1; font-weight:500; font-size:1.1rem;">Add, edit, delete, and customize categories</div>
+                        <img src="SUNO06.png" alt="Suno Slide 6" class="w-full rounded-xl suno-slide-img" style="display:none; max-height:480px; object-fit:contain;" />
+                        <div class="suno-caption" style="display:none; text-align:center; margin-top:12px; color:#6B46C1; font-weight:500; font-size:1.1rem;">Import/export support for easy backup</div>
+                    </div>
+                </div>
+                <button class="carousel-arrow right" id="suno-next-btn" style="position: absolute; right: -48px; top: 50%; transform: translateY(-50%); z-index:2; background:rgba(107,70,193,0.8); color:white; width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:none; font-size:1.5rem;">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="w-full flex flex-col items-center mb-8">
+            <h2 class="text-2xl font-semibold text-purple-700 mb-4">Suno Tutorial Video</h2>
+            <a href="https://youtube.com/shorts/rDoZp828u9o" target="_blank" class="inline-flex items-center bg-purple-600 text-white px-8 py-4 rounded-lg hover:bg-purple-700 transition-colors shadow-lg hover:shadow-xl text-lg font-semibold">
+                <i class="fab fa-youtube mr-3 text-xl"></i>
+                Watch Tutorial
+            </a>
+        </div>
+        <p class="text-gray-600 mb-8 text-center text-lg">🎵 The best tool for Suno creators! Full prompt management + one-click insert.</p>
+
+        <!-- Feature Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-purple-600 mb-2">Prompt Management System</h3>
+                <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                    <li>Save, edit, and delete prompts (title and content)</li>
+                    <li>Category support: add, edit, delete categories</li>
+                    <li><span class="text-purple-500">Special category "suno styles" auto-applies to Suno style field</span></li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-purple-600 mb-2">Powerful Search & Filter</h3>
+                <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                    <li>Instant prompt search</li>
+                    <li>Quickly filter by category</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-purple-600 mb-2">Import & Backup</h3>
+                <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                    <li>Support JSON export/import</li>
+                    <li>Paste or copy prompt content from clipboard</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-purple-600 mb-2">Suno Website Integration</h3>
+                <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                    <li>One-click insert for lyrics and styles</li>
+                    <li>Auto-copy and insert to Suno fields</li>
+                    <li>Success message after insertion</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-purple-600 mb-2">Multi-language Interface</h3>
+                <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                    <li>Built-in 9 languages: Traditional Chinese, Simplified Chinese, English, Japanese, Korean, French, German, Spanish, Portuguese</li>
+                    <li>Auto-selects language based on browser, all messages fully localized</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-purple-600 mb-2">Modern User Interface</h3>
+                <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                    <li>Material Icons design</li>
+                    <li>Popup and responsive design</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-purple-600 mb-2">Security & Permissions</h3>
+                <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                    <li>Only uses necessary Chrome permissions</li>
+                    <li>Clipboard and storage support, works on all sites</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- How to Use Section -->
+        <section class="mb-12 bg-purple-50 p-8 rounded-lg">
+            <h2 class="text-2xl font-semibold text-purple-600 mb-6 text-center">Get Started in 3 Easy Steps</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">1</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Install the Extension</h3>
+                    <p class="text-gray-600">Download and install Invoque Suno from the browser store</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">2</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Create Prompts & Categories</h3>
+                    <p class="text-gray-600">Start by creating your first Suno prompt and custom categories</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">3</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">One-click Insert to Suno</h3>
+                    <p class="text-gray-600">Insert lyrics and styles to Suno with one click and start creating</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real Use Cases Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-purple-600 mb-6 text-center">Real Use Cases</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-music text-2xl text-purple-500 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Music Creators</h3>
+                    </div>
+                    <p class="text-gray-600">Quickly access your favorite lyrics and style prompts, never lose inspiration</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-language text-2xl text-purple-500 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Multi-language Use</h3>
+                    </div>
+                    <p class="text-gray-600">Manage lyrics and styles in multiple languages, making global creation easier</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center text-purple-700 font-bold text-lg mt-8">No more manual input, no more copy-paste. <br>Make every Suno creation easier and more efficient.<br>Install now and start creating smarter!</div>
+        <div class="text-center mt-12">
+            <a href="https://chromewebstore.google.com/detail/invoque-for-suno/eodpeaakopgpbhnfigcgnohkbjaciijd" target="_blank" class="inline-flex items-center bg-purple-600 text-white px-8 py-4 rounded-lg hover:bg-purple-700 transition-colors shadow-lg hover:shadow-xl text-lg font-semibold">
+                <i class="fab fa-chrome mr-3 text-xl"></i>
+                Download on Chrome Web Store
+            </a>
+            <p class="text-gray-500 mt-4">Supports all browsers with Manifest V3</p>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script>fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer').innerHTML=t});</script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let sunoIdx = 0;
+        const sunoImgs = document.querySelectorAll('.suno-slide-img');
+        const sunoCaps = document.querySelectorAll('.suno-caption');
+        function showSunoSlide(idx) {
+            sunoImgs.forEach((img, i) => {
+                img.style.display = (i === idx) ? 'block' : 'none';
+            });
+            sunoCaps.forEach((cap, i) => {
+                cap.style.display = (i === idx) ? 'block' : 'none';
+            });
+        }
+        function nextSunoSlide() {
+            sunoIdx = (sunoIdx + 1) % sunoImgs.length;
+            showSunoSlide(sunoIdx);
+        }
+        function prevSunoSlide() {
+            sunoIdx = (sunoIdx - 1 + sunoImgs.length) % sunoImgs.length;
+            showSunoSlide(sunoIdx);
+        }
+        document.getElementById('suno-next-btn').onclick = nextSunoSlide;
+        document.getElementById('suno-prev-btn').onclick = prevSunoSlide;
+        showSunoSlide(sunoIdx);
+        setInterval(nextSunoSlide, 4000);
+    });
+    </script>
+</body>
+</html> 

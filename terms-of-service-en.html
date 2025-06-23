@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5QDHPFEWL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V5QDHPFEWL');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Invoque</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <div id="header"></div>
+    <script>
+    fetch('header.html').then(r=>r.text()).then(t=>{
+        document.getElementById('header').innerHTML = t;
+        // 重新執行 header 內的 script
+        var scripts = document.getElementById('header').querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+            var newScript = document.createElement('script');
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
+    });
+    </script>
+
+    <main class="max-w-4xl mx-auto py-10 px-4">
+        <h1 class="text-4xl font-bold text-purple-700 mb-4 text-center">
+            <i class="fas fa-file-contract mr-3"></i>Terms of Service & Policy
+        </h1>
+        <p class="text-gray-600 mb-8 text-center">Last updated: May 13, 2025</p>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-check-circle mr-2"></i>1. Terms of Use
+                    </h2>
+                    <p class="text-gray-700">By using any product or service provided by Invoque Studio ("the Service"), you agree to these terms.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-key mr-2"></i>2. License & Subscription
+                    </h2>
+                    <p class="text-gray-700">Some products require a valid license code or subscription. If you do not cancel before the end of the billing cycle, your subscription will renew automatically. Unauthorized use of license codes is strictly prohibited.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-credit-card mr-2"></i>3. Payment & Refund Policy
+                    </h2>
+                    <p class="text-gray-700 mb-4">All payments are processed by third-party platforms. If you request a refund within 7 days of purchase and have not heavily used the product, we may offer a refund at our discretion.</p>
+                    <p class="text-gray-700">To request a refund, please contact us via our contact page.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-shield-alt mr-2"></i>4. Privacy Policy
+                    </h2>
+                    <p class="text-gray-700 mb-4">We value your privacy. All user data is used only for license verification and service improvement. We do not sell or share your personal information with third parties, except as required by law.</p>
+                    <p class="text-gray-700 mb-4">We may collect: email, purchase info, license status, and usage timestamps.</p>
+                    <p class="text-gray-700">You can contact us anytime to request data deletion.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-copyright mr-2"></i>5. Intellectual Property
+                    </h2>
+                    <p class="text-gray-700">All content, source code, and trademarks in the Service are owned by Invoque Studio and protected by intellectual property laws.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-edit mr-2"></i>6. Service Changes
+                    </h2>
+                    <p class="text-gray-700">We reserve the right to modify or discontinue the Service at any time without notice. Changes take effect immediately upon update on this page.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>7. Limitation of Liability
+                    </h2>
+                    <p class="text-gray-700">To the fullest extent permitted by law, we are not liable for any indirect damages arising from the use or inability to use the Service.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-purple-800 mb-4">
+                        <i class="fas fa-envelope mr-2"></i>8. Contact Us
+                    </h2>
+                    <p class="text-gray-700 mb-4">If you have any questions about these terms, privacy, or refunds, please contact us at:</p>
+                    <a href="https://invoque-v9g7.vercel.app/report.html" class="text-purple-800 hover:text-purple-700">
+                        <i class="fas fa-external-link-alt mr-1"></i>👉 https://invoque-v9g7.vercel.app/report.html
+                    </a>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script>fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer').innerHTML=t});</script>
+</body>
+</html> 

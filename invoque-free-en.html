@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5QDHPFEWL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V5QDHPFEWL');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoque Free - Product Introduction</title>
+    <meta name="description" content="Invoque Free - AI prompt management tool to help users efficiently manage and search prompts, boosting creativity and productivity.">
+    <meta property="og:title" content="Invoque Free - Product Introduction">
+    <meta property="og:description" content="Invoque Free - AI prompt management tool to help users efficiently manage and search prompts, boosting creativity and productivity.">
+    <meta property="og:image" content="InvoqueLogo.png">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            margin: 0 48px;
+        }
+        .carousel-slide {
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(107, 70, 193, 0.8);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(107,70,193,0.15);
+        }
+        .carousel-arrow:hover {
+            background: rgba(107, 70, 193, 1);
+        }
+        .carousel-arrow.left {
+            left: -64px;
+        }
+        .carousel-arrow.right {
+            right: -64px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <div id="header"></div>
+    <script>
+    fetch('header.html').then(r=>r.text()).then(t=>{
+        document.getElementById('header').innerHTML = t;
+        // 重新執行 header 內的 script
+        var scripts = document.getElementById('header').querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+            var newScript = document.createElement('script');
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
+    });
+    </script>
+
+    <main class="max-w-4xl mx-auto py-10 px-4 pt-20">
+        <h1 class="text-4xl font-bold text-purple-700 mb-4 text-center">Invoque FREE - AI Prompt Management Tool</h1>
+        <p class="text-gray-600 mb-8 text-center text-lg">Summon ideas, command creativity!</p>
+
+        <!-- Carousel Section -->
+        <div class="relative flex items-center mb-12" style="margin: 0 48px;">
+            <button class="carousel-arrow left" onclick="prevSlide()" style="position: absolute; left: -64px; top: 50%; transform: translateY(-50%);">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-container w-full" style="overflow: hidden; padding: 0;">
+                <div class="carousel-slide flex transition-transform duration-500 w-full">
+                    <div class="w-full flex-shrink-0">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <img src="feature-1.png" alt="Prompt Management" class="w-full h-48 object-cover rounded-lg mb-4" />
+                                <h3 class="text-xl font-semibold text-purple-600 mb-2">Prompt Management</h3>
+                                <p class="text-gray-600">Easily create, edit, and delete prompts to keep your AI workflow organized.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <img src="feature-2.png" alt="Quick Search" class="w-full h-48 object-cover rounded-lg mb-4" />
+                                <h3 class="text-xl font-semibold text-purple-600 mb-2">Quick Search</h3>
+                                <p class="text-gray-600">Instantly see search results and quickly find the prompts you need.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full flex-shrink-0">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <img src="feature-1.png" alt="Simple Interface" class="w-full h-48 object-cover rounded-lg mb-4" />
+                                <h3 class="text-xl font-semibold text-purple-600 mb-2">Simple Interface</h3>
+                                <p class="text-gray-600">Intuitive design makes it easy to use and improves your experience.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <img src="feature-2.png" alt="Import/Export" class="w-full h-48 object-cover rounded-lg mb-4" />
+                                <h3 class="text-xl font-semibold text-purple-600 mb-2">Import/Export</h3>
+                                <p class="text-gray-600">Easily back up and share your prompt collections.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full flex-shrink-0">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <img src="feature-1.png" alt="Lightweight Design" class="w-full h-48 object-cover rounded-lg mb-4" />
+                                <h3 class="text-xl font-semibold text-purple-600 mb-2">Lightweight Design</h3>
+                                <p class="text-gray-600">Optimized for performance, won't slow down your browser.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <img src="feature-2.png" alt="Multi-language Support" class="w-full h-48 object-cover rounded-lg mb-4" />
+                                <h3 class="text-xl font-semibold text-purple-600 mb-2">Multi-language Support</h3>
+                                <p class="text-gray-600">Supports Traditional Chinese, English, Simplified Chinese, Japanese, Korean, Spanish, French, German, Portuguese, Russian, and more.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow right" onclick="nextSlide()" style="position: absolute; right: -64px; top: 50%; transform: translateY(-50%);">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- How to Use Section -->
+        <section class="mb-12 bg-purple-50 p-8 rounded-lg">
+            <h2 class="text-2xl font-semibold text-purple-600 mb-6 text-center">Get Started in 3 Easy Steps</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">1</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Install the Extension</h3>
+                    <p class="text-gray-600">Download and install Invoque Free from the browser store</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">2</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Create Prompts</h3>
+                    <p class="text-gray-600">Start by creating your first AI prompt</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">3</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Start Using</h3>
+                    <p class="text-gray-600">Use your prompts on any AI platform</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real Use Cases Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-purple-600 mb-6 text-center">Real Use Cases</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-pen-fancy text-2xl text-purple-500 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Content Creators</h3>
+                    </div>
+                    <p class="text-gray-600">Quickly access your favorite writing prompts and boost your creativity</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-code text-2xl text-purple-500 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Developers</h3>
+                    </div>
+                    <p class="text-gray-600">Manage prompts for code generation and debugging</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-purple-600 mb-2">Name Origin｜Invoque</h2>
+            <p class="mb-2">Invoque comes from the English word "Invoke," meaning "to call upon"—just like entering a prompt to summon powerful AI responses and creativity.</p>
+            <p class="mb-2">We chose the spelling "Invoque" to keep the original meaning while making the name unique and recognizable, adding a touch of mystery and tech vibe.</p>
+            <p>Invoque is a professional prompt management tool. It's not just for storing and syncing your prompts, but also a bridge for communicating with AI. Every click and input is like a "summon," awakening creativity and intelligence in language models.</p>
+        </section>
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-purple-600 mb-4">Product Overview</h2>
+            <p class="mb-4">Invoque FREE is a browser extension designed for AI users to help manage and use AI prompts (PROMPT) more efficiently. This tool lets you easily organize, save, and quickly use your AI prompts, making your AI interactions more efficient and creative.</p>
+        </section>
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-purple-600 mb-4">Key Features</h2>
+            <ul class="space-y-4">
+                <li class="flex items-start"><span class="mr-3 text-purple-500"><i class="fas fa-folder-open"></i></span><div><b>Prompt Management:</b> Create, edit, and delete prompts, categorize, filter, and search instantly.</div></li>
+                <li class="flex items-start"><span class="mr-3 text-purple-500"><i class="fas fa-search"></i></span><div><b>Quick Search:</b> Instantly find the prompts you need.</div></li>
+                <li class="flex items-start"><span class="mr-3 text-purple-500"><i class="fas fa-desktop"></i></span><div><b>User Interface:</b> Clean, modern design for a great experience.</div></li>
+                <li class="flex items-start"><span class="mr-3 text-purple-500"><i class="fas fa-database"></i></span><div><b>Data Management:</b> Local storage, import/export, real-time saving to keep your data safe.</div></li>
+                <li class="flex items-start"><span class="mr-3 text-purple-500"><i class="fas fa-shield-alt"></i></span><div><b>Security:</b> No user data is collected or uploaded. All data is stored locally.</div></li>
+                <li class="flex items-start"><span class="mr-3 text-purple-500"><i class="fas fa-bolt"></i></span><div><b>Technical Features:</b> Manifest V3, multi-browser support, lightweight design.</div></li>
+            </ul>
+        </section>
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-purple-600 mb-4">Use Cases</h2>
+            <ul class="list-disc pl-6 text-gray-700">
+                <li>AI Content Creators</li>
+                <li>Researchers</li>
+                <li>Developers</li>
+                <li>Anyone who frequently uses AI prompts</li>
+            </ul>
+        </section>
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-purple-600 mb-4">Version Info</h2>
+            <ul class="list-disc pl-6 text-gray-700">
+                <li>Current version: 1.0</li>
+                <li>Supported languages: Traditional Chinese, English, Simplified Chinese, Japanese, Korean, Spanish, French, German, Portuguese, Russian</li>
+                <li>System requirements: Browser supporting Manifest V3</li>
+            </ul>
+        </section>
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-purple-600 mb-4">Privacy & Security</h2>
+            <ul class="list-disc pl-6 text-gray-700">
+                <li>All data is stored locally</li>
+                <li>Basic features work offline</li>
+                <li>No user data is collected or uploaded</li>
+            </ul>
+        </section>
+        <div class="text-center text-purple-700 font-bold text-lg mt-8">Summon ideas, command creativity!</div>
+        <div class="text-center mt-12">
+            <a href="https://chromewebstore.google.com/detail/invoque-free/njfcikdafgjafbcgefkbnnkfbogbmfjo" target="_blank" class="inline-flex items-center bg-purple-600 text-white px-8 py-4 rounded-lg hover:bg-purple-700 transition-colors shadow-lg hover:shadow-xl text-lg font-semibold">
+                <i class="fas fa-download mr-3 text-xl"></i>
+                Download on Chrome Web Store
+            </a>
+            <p class="text-gray-500 mt-4">Supports all browsers with Manifest V3</p>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script>fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer').innerHTML=t});</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide > div');
+        const totalSlides = slides.length;
+
+        function updateSlide() {
+            const slideContainer = document.querySelector('.carousel-slide');
+            slideContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlide();
+        }
+
+        // Auto play
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html> 

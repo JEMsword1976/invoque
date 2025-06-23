@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5QDHPFEWL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V5QDHPFEWL');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Invoque</title>
+    <meta name="description" content="Invoque support: FAQ, documentation center, and contact support to help users solve technical issues.">
+    <meta property="og:title" content="Support - Invoque">
+    <meta property="og:description" content="Invoque support: FAQ, documentation center, and contact support to help users solve technical issues.">
+    <meta property="og:image" content="InvoqueLogo.png">
+    <link rel="icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <div id="header"></div>
+    <script>
+    fetch('header.html').then(r=>r.text()).then(t=>{
+        document.getElementById('header').innerHTML = t;
+        // 重新執行 header 內的 script
+        var scripts = document.getElementById('header').querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+            var newScript = document.createElement('script');
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
+    });
+    </script>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white mt-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-purple-600 mb-12">Frequently Asked Questions</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">How do I start using Invoque?</h3>
+                        <p class="text-gray-600">You can download Invoque Free from our website. After installing it in your browser, you can start creating and managing your AI prompts and insert them into major AI websites with one click.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">What's the difference between Invoque Free and Invoque Suno?</h3>
+                        <p class="text-gray-600">Invoque Free provides basic prompt management, supports categories, search, and one-click insert to AI sites. Invoque Suno is optimized for the SUNO music platform, allowing you to insert lyrics or styles into the right fields for a smoother music creation process.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">How can I improve my AI efficiency?</h3>
+                        <p class="text-gray-600">With Invoque, you can organize your prompts by category and insert them with one click, saving time and boosting creativity. The Suno version lets you manage lyrics and styles separately for even more efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Center -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-purple-600 mb-12">Documentation Center</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-book text-4xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">User Manual</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-purple-600">Quick Start Guide</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Feature Documentation</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Advanced Tips</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-video text-4xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Tutorial Videos</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-purple-600">Basic Tutorials</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Advanced Features</a></li>
+                        <li><a href="#" class="hover:text-purple-600">FAQ Videos</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-download text-4xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Download Area</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-purple-600">Software Updates</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Template Downloads</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Support -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-purple-600 mb-12">Contact Support</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Technical Support</h3>
+                        <p class="text-gray-600 mb-4">Our support team is always here to help:</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-envelope mr-2 text-purple-600"></i>support@invoque.com</li>
+                            <li><i class="fas fa-phone mr-2 text-purple-600"></i>0800-123-456</li>
+                            <li><i class="fas fa-clock mr-2 text-purple-600"></i>Mon-Fri 9:00-18:00</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Online Service</h3>
+                        <p class="text-gray-600 mb-4">You can also reach us via:</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-comments mr-2 text-purple-600"></i>Online Chat System</li>
+                            <li><i class="fab fa-line mr-2 text-purple-600"></i>Official Line Account</li>
+                            <li><i class="fab fa-facebook mr-2 text-purple-600"></i><a href="https://www.facebook.com/profile.php?id=61575763867636" target="_blank" class="hover:text-purple-600">Facebook Page</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#footer").load("footer.html");
+        });
+    </script>
+</body>
+</html> 

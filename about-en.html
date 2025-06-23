@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5QDHPFEWL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V5QDHPFEWL');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Invoque</title>
+    <meta name="description" content="Invoque was founded by an experienced developer, focusing on digital transformation, app and Chrome extension development for SMEs.">
+    <meta property="og:title" content="About Us - Invoque">
+    <meta property="og:description" content="Invoque was founded by an experienced developer, focusing on digital transformation, app and Chrome extension development for SMEs.">
+    <meta property="og:image" content="InvoqueLogo.png">
+    <link rel="icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <div id="header"></div>
+    <script>
+    fetch('header.html').then(r=>r.text()).then(t=>{
+        document.getElementById('header').innerHTML = t;
+        // 重新執行 header 內的 script
+        var scripts = document.getElementById('header').querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+            var newScript = document.createElement('script');
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
+    });
+    </script>
+
+    <!-- Company Introduction -->
+    <section class="py-20 bg-white mt-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-purple-600 mb-12">Company Introduction</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Invoque was founded by an independent developer with over 30 years of experience in the IT industry. Since the 1990s, from web design and network engineering to IT consulting, we have helped many Taiwanese SMEs solve challenges in digital transformation and information management.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        As technology evolves, Invoque is dedicated to app development, software solutions, and Chrome extensions, aiming to turn the latest cloud and AI technologies into practical tools that are easy for both businesses and individuals to use.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        We believe IT should be a tool everyone can master. Invoque will continue to develop efficient, user-friendly, and practical products with rich industry experience and an innovative spirit, helping users improve work efficiency and embrace the digital future.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Cases -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-purple-600 mb-12">Real Cases</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <img src="sample1.png" alt="National Data Dashboard" class="w-full h-40 object-cover rounded mb-4 cursor-zoom-in lightbox-img" data-img="sample1.png" />
+                    <h3 class="text-xl font-semibold text-purple-700 mb-2">National Data Dashboard</h3>
+                    <p class="text-gray-600">
+                        A dashboard tailored for SMEs. Staff can enter business data, and the system instantly summarizes and analyzes it, helping management keep track of operations and make better decisions.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <img src="sample2.png" alt="Data Visualization & Website Sync" class="w-full h-40 object-cover rounded mb-4 cursor-zoom-in lightbox-img" data-img="sample2.png" />
+                    <h3 class="text-xl font-semibold text-purple-700 mb-2">Data Visualization & Website Sync</h3>
+                    <p class="text-gray-600">
+                        Internal data is automatically turned into pie charts and other visuals, instantly updated on the company website, making it easy for teams and clients to see the latest info and improve communication.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <img src="sample3.png" alt="Custom E-Forms" class="w-full h-40 object-cover rounded mb-4 cursor-zoom-in lightbox-img" data-img="sample3.png" />
+                    <h3 class="text-xl font-semibold text-purple-700 mb-2">Custom E-Forms</h3>
+                    <p class="text-gray-600">
+                        100% customized e-forms with instant calculations and dynamic options, meeting complex business needs and improving accuracy and efficiency.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <img src="sample4.png" alt="Google Sheet Registration & Stats" class="w-full h-40 object-cover rounded mb-4 cursor-zoom-in lightbox-img" data-img="sample4.png" />
+                    <h3 class="text-xl font-semibold text-purple-700 mb-2">Google Sheet Registration & Stats</h3>
+                    <p class="text-gray-600">
+                        Registration data is synced to Google Sheets in real time. Registrants can check their status, and the backend automatically counts people and payments for easy management.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <img src="sample5.png" alt="Local Data Sync to Google Sheet" class="w-full h-40 object-cover rounded mb-4 cursor-zoom-in lightbox-img" data-img="sample5.png" />
+                    <h3 class="text-xl font-semibold text-purple-700 mb-2">Local Data Sync to Google Sheet</h3>
+                    <p class="text-gray-600">
+                        Local data is synced to Google Sheets, so colleagues nationwide can check progress and goals anytime, improving transparency and teamwork.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <img src="sample6.png" alt="YouTube Video Downloader" class="w-full h-40 object-cover rounded mb-4 cursor-zoom-in lightbox-img" data-img="sample6.png" />
+                    <h3 class="text-xl font-semibold text-purple-700 mb-2">YouTube Video Downloader</h3>
+                    <p class="text-gray-600">
+                        Supports batch downloads, format selection (mp4/music), resolution switching, and save path settings. The intuitive interface makes it easy to get the videos or music you need.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Culture -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-purple-600 mb-12">Company Culture</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-lightbulb text-3xl text-purple-600 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800">Innovation</h3>
+                    </div>
+                    <p class="text-gray-600">We encourage creative thinking and keep exploring new technologies and solutions to create more value for our clients.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-users text-3xl text-purple-600 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800">Teamwork</h3>
+                    </div>
+                    <p class="text-gray-600">We believe in the power of teamwork. Through effective communication and collaboration, we achieve our goals together.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-star text-3xl text-purple-600 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800">Pursuit of Excellence</h3>
+                    </div>
+                    <p class="text-gray-600">We are committed to providing the best products and services, always striving for improvement and perfection.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-heart text-3xl text-purple-600 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800">Customer First</h3>
+                    </div>
+                    <p class="text-gray-600">We put customer needs at the center, offering thoughtful service and support to build long-term partnerships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100vw; height:100vh; background:rgba(30,30,40,0.85); align-items:center; justify-content:center;">
+      <span id="lightbox-close" style="position:absolute;top:32px;right:48px;font-size:2.5rem;color:white;cursor:pointer;z-index:10001;">&times;</span>
+      <img id="lightbox-img" src="" alt="Zoomed Image" style="max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.3); border:4px solid white;" />
+    </div>
+    <script>
+      document.querySelectorAll('.lightbox-img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          document.getElementById('lightbox-img').src = this.getAttribute('data-img');
+          document.getElementById('lightbox-modal').style.display = 'flex';
+        });
+      });
+      document.getElementById('lightbox-close').onclick = function() {
+        document.getElementById('lightbox-modal').style.display = 'none';
+        document.getElementById('lightbox-img').src = '';
+      };
+      document.getElementById('lightbox-modal').onclick = function(e) {
+        if(e.target === this) {
+          this.style.display = 'none';
+          document.getElementById('lightbox-img').src = '';
+        }
+      };
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#footer").load("footer.html");
+        });
+    </script>
+</body>
+</html> 

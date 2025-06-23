@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5QDHPFEWL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V5QDHPFEWL');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoque - Netflix Skipper</title>
+    <meta name="description" content="Netflix Skipper - Enhance your Netflix viewing experience.">
+    <meta property="og:title" content="Invoque - Netflix Skipper">
+    <meta property="og:description" content="Netflix Skipper - Enhance your Netflix viewing experience.">
+    <meta property="og:image" content="InvoqueLogo.png">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        purple: {
+                            light: '#d8b4fe',
+                            DEFAULT: '#9333ea',
+                            dark: '#6b21a8',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <div id="header"></div>
+    <script>
+    fetch('header.html').then(r=>r.text()).then(t=>{
+        document.getElementById('header').innerHTML = t;
+        // 重新執行 header 內的 script
+        var scripts = document.getElementById('header').querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+            var newScript = document.createElement('script');
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
+    });
+    </script>
+
+    <main class="max-w-6xl mx-auto py-10 px-4 pt-20">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold text-purple-700 mb-4">Netflix Skipper</h1>
+            <p class="text-gray-600 mb-12 text-lg">Automatically skip intros, recaps, and credits for a seamless viewing experience.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+            <!-- Monthly Plan -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Monthly Plan</h2>
+                    <p class="text-gray-600">Monthly Subscription</p>
+                </div>
+                <div class="text-center mb-8">
+                    <span class="text-4xl font-bold text-gray-800">$1.00</span>
+                    <span class="text-gray-600">/ month</span>
+                    <div class="mt-2">
+                        <span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">30 day trial</span>
+                    </div>
+                </div>
+                <a href="https://pay.paddle.io/hsc_01jyb9zsxq51a9v8pzr4negjxt_2edntyz8rzh1yf81rz1s9prm4wx0y9es" class="block text-center bg-gray-800 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-900 transition-colors">
+                    Choose Plan
+                </a>
+            </div>
+
+            <!-- Annual Plan -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 border-2 border-purple-500">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-purple-700 mb-2">Annual Plan</h2>
+                    <p class="text-purple-600">Yearly Subscription</p>
+                </div>
+                <div class="text-center mb-8">
+                    <span class="text-4xl font-bold text-purple-700">$10.00</span>
+                    <span class="text-gray-600">/ year</span>
+                     <div class="mt-2">
+                        <span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">30 day trial</span>
+                    </div>
+                </div>
+                <a href="https://pay.paddle.io/hsc_01jyba1r94k1q663rw4s148g4e_pwjx34dygywtz4bqbhckvgbpxwmxvbs1" class="block text-center bg-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                    Choose Plan
+                </a>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <section class="max-w-4xl mx-auto mb-12">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Features</h3>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <ul class="space-y-4">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>Automatically skip Netflix intros</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>Automatically skip "recaps"</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>Auto-play next episode</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>Seamless viewing experience</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Additional Details -->
+        <section class="max-w-4xl mx-auto">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Product Details</h3>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2">Tax category</h4>
+                        <p class="text-gray-600">Standard digital goods</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2">Created</h4>
+                        <p class="text-gray-600">Jun 22, 2025</p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <h4 class="font-semibold text-lg mb-2">Product ID</h4>
+                        <p class="text-gray-600 break-all">pro_01jyazt83gvrvvyshzg32qtsem</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script>fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer').innerHTML=t});</script>
+</body>
+</html> 

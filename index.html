@@ -53,7 +53,22 @@
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
     <div id="header"></div>
-    <script>fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('header').innerHTML=t});</script>
+    <script>
+    fetch('header.html').then(r=>r.text()).then(t=>{
+        document.getElementById('header').innerHTML = t;
+        // 重新執行 header 內的 script
+        var scripts = document.getElementById('header').querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+            var newScript = document.createElement('script');
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
+    });
+    </script>
 
     <!-- Hero Section -->
     <section class="hero-pattern py-5 md:py-11">
@@ -434,7 +449,22 @@
     </section>
 
     <div id="footer"></div>
-    <script>fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer').innerHTML=t});</script>
+    <script>
+    fetch('footer.html').then(r=>r.text()).then(t=>{
+        document.getElementById('footer').innerHTML = t;
+        // 重新執行 footer 內的 script
+        var scripts = document.getElementById('footer').querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+            var newScript = document.createElement('script');
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
+    });
+    </script>
 
     <script>
         // Simple mobile menu toggle

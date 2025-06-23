@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5QDHPFEWL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V5QDHPFEWL');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoque Pricing</title>
+    <meta name="description" content="Invoque offers Free and SUNO Pro versions to meet different user needs.">
+    <meta property="og:title" content="Invoque Pricing">
+    <meta property="og:description" content="Invoque offers Free and SUNO Pro versions to meet different user needs.">
+    <meta property="og:image" content="InvoqueLogo.png">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <div id="header"></div>
+    <script>
+    fetch('header.html').then(r=>r.text()).then(t=>{
+        document.getElementById('header').innerHTML = t;
+        // 重新執行 header 內的 script
+        var scripts = document.getElementById('header').querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+            var newScript = document.createElement('script');
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
+    });
+    </script>
+
+    <main class="max-w-6xl mx-auto py-10 px-4 pt-20">
+        <h1 class="text-4xl font-bold text-purple-700 mb-4 text-center">Choose the Best Plan for You</h1>
+        <p class="text-gray-600 mb-12 text-center text-lg">Two independent products for different needs</p>
+
+        <!-- Pricing Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- FREE Version -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Invoque FREE</h2>
+                    <p class="text-gray-600">AI Prompt Management Tool</p>
+                </div>
+                <div class="text-center mb-8">
+                    <span class="text-4xl font-bold text-gray-800">Free</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>General AI prompt management</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>Supports top 10 AI websites</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>Basic category management</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>Basic search function</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-3"></i>
+                        <span>Multi-language interface support</span>
+                    </li>
+                </ul>
+                <a href="#" class="block text-center bg-gray-100 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                    Start Now
+                </a>
+            </div>
+
+            <!-- SUNO Version -->
+            <div class="bg-purple-50 rounded-2xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 border-2 border-purple-200">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-purple-700 mb-2">Invoque SUNO</h2>
+                    <p class="text-purple-600">Music Creation Tool</p>
+                </div>
+                <div class="text-center mb-8">
+                    <span class="text-4xl font-bold text-purple-700">$3</span>
+                    <span class="text-gray-600">/ month</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>Optimized interface for Suno</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>One-click insert for Suno</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>Lyrics and style management</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>Advanced search and filter</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>Import/export data</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-purple-500 mr-3"></i>
+                        <span>Priority tech support</span>
+                    </li>
+                </ul>
+                <a href="https://chromewebstore.google.com/detail/invoque-for-suno/eodpeaakopgpbhnfigcgnohkbjaciijd" target="_blank" class="block text-center bg-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                    Subscribe Now
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="mt-20 max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">FAQ</h2>
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg mb-2">What's the difference between Invoque FREE and Invoque SUNO?</h3>
+                    <p class="text-gray-600">Invoque FREE is a general AI prompt management tool for all AI websites. Invoque SUNO is designed for music creation, offering exclusive lyrics and style management for Suno.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg mb-2">How do I install Invoque SUNO?</h3>
+                    <p class="text-gray-600">You can install Invoque SUNO directly from the Chrome Web Store. It's a standalone extension, separate from Invoque FREE.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg mb-2">Can I use both versions at the same time?</h3>
+                    <p class="text-gray-600">Yes, you can install both Invoque FREE and Invoque SUNO. They are independent products and can be used together.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg mb-2">Can I cancel my subscription anytime?</h3>
+                    <p class="text-gray-600">Yes, you can cancel your Invoque SUNO subscription anytime in the Chrome Web Store. Service will end after the current billing period.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Support -->
+        <div class="text-center mt-16">
+            <p class="text-gray-600 mb-4">Still have questions?</p>
+            <a href="mailto:support@invoque.com" class="inline-flex items-center text-purple-600 hover:text-purple-700">
+                <i class="fas fa-envelope mr-2"></i>
+                Contact Us
+            </a>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script>fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer').innerHTML=t});</script>
+</body>
+</html> 
