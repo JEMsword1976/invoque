@@ -35,7 +35,22 @@
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
     <div id="header"></div>
-    <script>fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('header').innerHTML=t});</script>
+    <script>
+    fetch('header.html').then(r=>r.text()).then(t=>{
+        document.getElementById('header').innerHTML = t;
+        // 重新執行 header 內的 script
+        var scripts = document.getElementById('header').querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+            var newScript = document.createElement('script');
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
+    });
+    </script>
 
     <main class="max-w-6xl mx-auto py-10 px-4 pt-20">
         <h1 class="text-4xl font-bold text-purple-700 mb-4 text-center">選擇最適合您的方案</h1>
