@@ -10,9 +10,24 @@
     const PRODUCT_ID = 'pri_01jyb32gjsmvf819q2s04hqvr7'; // 例如 654321
     // 取得用戶 email
     window.onload = function() {
-      chrome.storage.sync.get('userInfo', function(data) {
-        const userEmail = data.userInfo ? data.userInfo.email : '';
+      if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.sync) {
+        chrome.storage.sync.get('userInfo', function(data) {
+          const userEmail = data.userInfo ? data.userInfo.email : '';
+          Paddle.Setup({ vendor: VENDOR_ID });
+          console.log('準備開啟 Paddle 結帳', { product: PRODUCT_ID, email: userEmail });
+          Paddle.Checkout.open({
+            product: PRODUCT_ID,
+            email: userEmail,
+            frameTarget: 'checkout-container',
+            frameStyle: 'min-width: 312px; background-color: transparent;',
+            frameInitialHeight: 500
+          });
+          console.log('Paddle 結帳已呼叫');
+        });
+      } else {
+        const userEmail = 'test@example.com';
         Paddle.Setup({ vendor: VENDOR_ID });
+        console.log('準備開啟 Paddle 結帳', { product: PRODUCT_ID, email: userEmail });
         Paddle.Checkout.open({
           product: PRODUCT_ID,
           email: userEmail,
@@ -20,7 +35,8 @@
           frameStyle: 'min-width: 312px; background-color: transparent;',
           frameInitialHeight: 500
         });
-      });
+        console.log('Paddle 結帳已呼叫');
+      }
     };
   </script>
   <style>
