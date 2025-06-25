@@ -10,32 +10,50 @@
     const PRODUCT_ID = 'pri_01jyb32gjsmvf819q2s04hqvr7'; // 例如 654321
     // 取得用戶 email
     window.onload = function() {
+      function openCheckoutWithUrl(url) {
+        const container = document.getElementById('checkout-container');
+        container.innerHTML = '';
+        const iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.style.width = '100%';
+        iframe.style.minHeight = '500px';
+        iframe.style.border = 'none';
+        container.appendChild(iframe);
+      }
       if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.sync) {
         chrome.storage.sync.get('userInfo', function(data) {
-          const userEmail = data.userInfo ? data.userInfo.email : '';
-          Paddle.Setup({ vendor: VENDOR_ID });
-          console.log('準備開啟 Paddle 結帳', { product: PRODUCT_ID, email: userEmail });
-          Paddle.Checkout.open({
-            price: PRODUCT_ID,
-            email: userEmail,
-            frameTarget: 'checkout-container',
-            frameStyle: 'min-width: 312px; background-color: transparent;',
-            frameInitialHeight: 500
-          });
-          console.log('Paddle 結帳已呼叫');
+          const userEmail = data.userInfo ? data.userInfo.email : 'test@example.com';
+          fetch('/api/paddle/checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: userEmail, plan: 'yearly' })
+          })
+          .then(res => res.json())
+          .then(data => {
+            if (data.checkoutUrl) {
+              openCheckoutWithUrl(data.checkoutUrl);
+            } else {
+              alert('建立訂單失敗: ' + (data.error || '未知錯誤'));
+            }
+          })
+          .catch(err => alert('API 錯誤: ' + err));
         });
       } else {
         const userEmail = 'test@example.com';
-        Paddle.Setup({ vendor: VENDOR_ID });
-        console.log('準備開啟 Paddle 結帳', { product: PRODUCT_ID, email: userEmail });
-        Paddle.Checkout.open({
-          price: PRODUCT_ID,
-          email: userEmail,
-          frameTarget: 'checkout-container',
-          frameStyle: 'min-width: 312px; background-color: transparent;',
-          frameInitialHeight: 500
-        });
-        console.log('Paddle 結帳已呼叫');
+        fetch('/api/paddle/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: userEmail, plan: 'yearly' })
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.checkoutUrl) {
+            openCheckoutWithUrl(data.checkoutUrl);
+          } else {
+            alert('建立訂單失敗: ' + (data.error || '未知錯誤'));
+          }
+        })
+        .catch(err => alert('API 錯誤: ' + err));
       }
     };
   </script>
