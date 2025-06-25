@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subscribe Yearly - Netflix Skipper</title>
+  <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+  <script>
+    // 請填入你的 Paddle Vendor ID 與年費產品 ID
+    const VENDOR_ID = 230293; // 例如 123456
+    const PRODUCT_ID = 'pri_01jyb32gjsmvf819q2s04hqvr7'; // 例如 654321
+    // 取得用戶 email
+    window.onload = function() {
+      chrome.storage.sync.get('userInfo', function(data) {
+        const userEmail = data.userInfo ? data.userInfo.email : '';
+        Paddle.Setup({ vendor: VENDOR_ID });
+        Paddle.Checkout.open({
+          product: PRODUCT_ID,
+          email: userEmail,
+          frameTarget: 'checkout-container',
+          frameStyle: 'min-width: 312px; background-color: transparent;',
+          frameInitialHeight: 500
+        });
+      });
+    };
+  </script>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; }
+    .container { max-width: 400px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 24px; }
+    h2 { color: #ba6b6c; }
+    #checkout-container { min-height: 500px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Subscribe Yearly</h2>
+    <div id="checkout-container"></div>
+  </div>
+</body>
+</html> 
