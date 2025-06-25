@@ -16,7 +16,7 @@
           Paddle.Setup({ vendor: VENDOR_ID });
           console.log('準備開啟 Paddle 結帳', { product: PRODUCT_ID, email: userEmail });
           Paddle.Checkout.open({
-            product: PRODUCT_ID,
+            price: PRODUCT_ID,
             email: userEmail,
             frameTarget: 'checkout-container',
             frameStyle: 'min-width: 312px; background-color: transparent;',
@@ -29,7 +29,7 @@
         Paddle.Setup({ vendor: VENDOR_ID });
         console.log('準備開啟 Paddle 結帳', { product: PRODUCT_ID, email: userEmail });
         Paddle.Checkout.open({
-          product: PRODUCT_ID,
+          price: PRODUCT_ID,
           email: userEmail,
           frameTarget: 'checkout-container',
           frameStyle: 'min-width: 312px; background-color: transparent;',
